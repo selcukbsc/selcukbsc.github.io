@@ -43,7 +43,7 @@ Merhaba,
 <p class="intro">
 
 🚦 Geç kaldıysam trafiktendir.<br>
-
+    
 🕒 Hata yaptıysam acelemdendir.
 
 </p>
@@ -129,7 +129,9 @@ Ahmet Selçuk Başcı
 
 </div>
     
-<div id="visitorCount"></div>
+<div id="visitorCount">
+    👀 Toplam Ziyaretçi: <span id="visitorNumber">0</span>
+</div>
     
 <footer>
 
@@ -140,24 +142,19 @@ Ahmet Selçuk Başcı
 </div>
 
 </div>
-    
 <script data-goatcounter="https://selcukbsc.goatcounter.com/count"
         async src="//gc.zgo.at/count.js"></script>
-    
-    <script>
+
+<script>
 window.addEventListener("load", function () {
     setTimeout(function () {
-        if (window.goatcounter && window.goatcounter.visit_count) {
-            window.goatcounter.visit_count({
-    append: "#visitorCount",
-    path: "TOTAL",
-    no_branding: true,
-    style: false,
-    text: true
-});
-        } else {
-            document.getElementById("visitorCount").innerHTML =
-                "👀 Sayaç yüklenemedi";
+        if (window.goatcounter && goatcounter.visit_count) {
+            goatcounter.visit_count({
+                append: "#visitorNumber",
+                type: "total",
+                no_branding: true,
+                style: false
+            });
         }
     }, 1000);
 });

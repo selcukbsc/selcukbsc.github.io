@@ -145,17 +145,20 @@ Ahmet Selçuk Başcı
         async src="//gc.zgo.at/count.js"></script>
     
     <script>
-let gcInterval = setInterval(() => {
-    if (window.goatcounter && window.goatcounter.visit_count) {
-        clearInterval(gcInterval);
-
-        window.goatcounter.visit_count({
-            append: "#visitorCount",
-            type: "total",
-            no_branding: true
-        });
-    }
-}, 100);
+window.addEventListener("load", function () {
+    setTimeout(function () {
+        if (window.goatcounter && window.goatcounter.visit_count) {
+            window.goatcounter.visit_count({
+                append: "#visitorCount",
+                path: "TOTAL",
+                no_branding: true
+            });
+        } else {
+            document.getElementById("visitorCount").innerHTML =
+                "👀 Sayaç yüklenemedi";
+        }
+    }, 1000);
+});
 </script>
     
 <script src="script.js"></script>

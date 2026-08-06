@@ -246,3 +246,22 @@ body::before{
         transform:translate(-20px,-20px) scale(1.05);
     }
 }
+
+#visitorCount table{
+    display:none;
+}
+
+#visitorCount::before{
+    content:"👀 Toplam Ziyaretçi: ";
+    color:#fff;
+    font-size:16px;
+    font-weight:bold;
+}
+
+#visitorCount{
+    color:#00ff99;
+    font-size:22px;
+    font-weight:bold;
+    text-align:center;
+    margin-top:10px;
+}

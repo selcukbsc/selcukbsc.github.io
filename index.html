@@ -143,6 +143,21 @@ Ahmet Selçuk Başcı
     
 <script data-goatcounter="https://selcukbsc.goatcounter.com/count"
         async src="//gc.zgo.at/count.js"></script>
+    
+    <script>
+let gcInterval = setInterval(() => {
+    if (window.goatcounter && window.goatcounter.visit_count) {
+        clearInterval(gcInterval);
+
+        window.goatcounter.visit_count({
+            append: "#visitorCount",
+            type: "total",
+            no_branding: true
+        });
+    }
+}, 100);
+</script>
+    
 <script src="script.js"></script>
 
 </body>
